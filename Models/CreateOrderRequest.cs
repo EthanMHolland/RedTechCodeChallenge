@@ -1,6 +1,6 @@
 ﻿namespace OrdersAPI.Models
 {
-    public class AddOrderRequest
+    public class CreateOrderRequest
     {
         public string OrderType { get; set; }
         public string CustomerName { get; set; }
