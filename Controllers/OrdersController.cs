@@ -74,5 +74,20 @@ namespace OrdersAPI.Controllers
             return NotFound();
 
         }
+
+        [HttpDelete]
+        [Route("{id:guid}")]
+        public async Task<IActionResult> DeleteOrder([FromRoute] Guid id)
+        {
+            var order = await dbContext.Orders.FindAsync(id);
+
+            if (order != null)
+            {
+                dbContext.Orders.Remove(order);
+                await dbContext.SaveChangesAsync();
+                return Ok(order);
+            }
+            return NotFound();
+        }
     }
 }
