@@ -1,4 +1,4 @@
-namespace RedTechCodeChallenge
+namespace OrdersAPI
 {
     public class WeatherForecast
     {

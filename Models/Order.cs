@@ -1,4 +1,4 @@
-﻿namespace RedTechCodeChallenge.Models
+﻿namespace OrdersAPI.Models
 {
     public class Order
     {

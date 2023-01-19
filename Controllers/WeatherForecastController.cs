@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace RedTechCodeChallenge.Controllers
+namespace OrdersAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
