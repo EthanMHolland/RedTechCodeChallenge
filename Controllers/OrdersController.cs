@@ -38,15 +38,15 @@ namespace OrdersAPI.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AddOrder(AddOrderRequest addOrderRequest)
+        public async Task<IActionResult> CreateOrder(CreateOrderRequest createOrderRequest)
         {
             var order = new Order()
             {
                 Id = Guid.NewGuid(),
-                OrderType = addOrderRequest.OrderType,
-                CustomerName = addOrderRequest.CustomerName,
+                OrderType = createOrderRequest.OrderType,
+                CustomerName = createOrderRequest.CustomerName,
                 CreatedDate = DateTime.Now,
-                CreatedByUsername = addOrderRequest.CreatedByUsername
+                CreatedByUsername = createOrderRequest.CreatedByUsername
 
             };
 
