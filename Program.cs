@@ -11,7 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<OrdersAPIDbContext>(options => options.UseInMemoryDatabase("OrdersDb"));
+builder.Services.AddDbContext<OrdersAPIDbContext>(options => 
+options.UseSqlServer(builder.Configuration.GetConnectionString("OrdersApiConnectionString")));
 
 var app = builder.Build();
 
