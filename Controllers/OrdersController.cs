@@ -43,7 +43,7 @@ namespace OrdersAPI.Controllers
             var order = new Order()
             {
                 Id = Guid.NewGuid(),
-                OrderType = createOrderRequest.OrderType,
+                Type = createOrderRequest.Type,
                 CustomerName = createOrderRequest.CustomerName,
                 CreatedDate = DateTime.Now,
                 CreatedByUsername = createOrderRequest.CreatedByUsername
@@ -63,7 +63,7 @@ namespace OrdersAPI.Controllers
             var order = await dbContext.Orders.FindAsync(id);
             if (order != null)
             {
-                order.OrderType = updateOrderRequest.OrderType;
+                order.Type = updateOrderRequest.Type;
                 order.CustomerName = updateOrderRequest.CustomerName;
                 order.CreatedByUsername = updateOrderRequest.CreatedByUsername;
 
