@@ -66,5 +66,13 @@ namespace OrdersAPI.Controllers
             return Ok();
             
         }
+
+        [HttpGet]
+        [Route("{orderType:int}")]
+        public IEnumerable<Order> SearchByOrderType([FromRoute]int orderType)
+        {
+            var filteredOrders = orderRepository.SearchByOrderType(orderType);
+            return filteredOrders;
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace OrdersAPI.Repositories
         void CreateOrder(CreateOrderRequest createOrderRequest);
         void UpdateOrder(Guid id, UpdateOrderRequest updateOrderRequest);
         void DeleteOrder(Guid id);
+        IEnumerable<Order> SearchByOrderType(int orderType);
         void Save();
     }
 }

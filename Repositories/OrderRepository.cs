@@ -55,7 +55,16 @@ namespace OrdersAPI.Repositories
             var order = _context.Orders.Find(id);
             _context.Orders.Remove(order);
         }
-        
+
+        public IEnumerable<Order> SearchByOrderType(int orderType)
+        {
+            var query = from order in _context.Orders
+                        where (int)order.Type == orderType
+                        select order;
+            return query.ToList();
+        }
+
+
         public void Save()
         {
             _context.SaveChanges();
